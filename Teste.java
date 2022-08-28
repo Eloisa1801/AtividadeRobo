@@ -1,11 +1,38 @@
+import java.util.Scanner;
 public class Teste {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        Coordenadas p1 = new Coordenadas(2,7);
-        Coordenadas p2 = new Coordenadas(3,6);
+     
+        Scanner ler = new Scanner(System.in);
+        Robo pos = new Robo(2,7);
+ 
+        System.out.println ( pos.getX ());
+        System.out . println ( pos.getY ());
+         
+        System.out.printf("Informe a direcao :\n");
+        String dir = ler.next();
+        System.out.printf("Informe a qauntidade de casas a movimentar :\n");
+        Double qtdMove = ler.nextDouble();
 
-        double result = p1.distance(p1, p2);
+        if(dir == "top"){
+            
+            pos.top( );
+        }
+
+        else if( dir == "down"){
+            pos.down ( );
+        }
+        else if( dir == "left"){
+            pos.left ( );
+        }
+        else if( dir == "right"){
+            pos.right ( );
+        }
+        else{
+            System.out.println ("Opcao invalida");
+        }
     }
     
 }
+
+
