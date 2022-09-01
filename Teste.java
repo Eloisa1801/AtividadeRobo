@@ -1,34 +1,43 @@
 import java.util.Scanner;
+
+import javax.swing.text.Position;
 public class Teste {
 
     public static void main(String[] args) throws Exception {
      
         Scanner ler = new Scanner(System.in);
-       // Robo pos = new Robo(2,7);
-        Coordenadas posicao = new Coordenadas(0,0)   ;
+        //Coordenadas position = new Coordenadas(1,3);
       
         Robo r = new Robo();
-        System.out.printf("Informe a direcao :\n");
+        System.out.println("Informe a direcao :");
         String dir = ler.next();
-        System.out.printf("Informe a qauntidade de casas a movimentar :\n");
-        Double qtdMove = ler.nextDouble();
+        System.out.println("Informe a qauntidade de casas a movimentar : ");
+        int qtdMove = ler.nextInt();
         r.move(dir, qtdMove);
-
-        if(dir == "top"){
-            top();
+        if(dir.equals("top")){
+            System.out.println("Entrei no if com dir valendo: " + dir);
+            r.top(qtdMove);
+            System.out.println("posição X: "+ r.position.getX());
+            System.out.println("posição Y: "+ r.position.getY());
         }
 
-        else if( dir == "down"){
-            down();
+        else if(dir.equals("down")){
+            r.down(qtdMove);
+            System.out.println("posição X: "+ r.position.getX());
+            System.out.println("posição Y: "+ r.position.getY());
         }
-        else if( dir == "left"){
-           left();
+        else if(dir.equals("left")){
+            r.left(qtdMove);
+            System.out.println("posição X: "+ r.position.getX());
+            System.out.println("posição Y: "+ r.position.getY());
         }
-        else if( dir == "right"){
-            right();
+        else if(dir.equals("right")){
+            r.right(qtdMove);
+            System.out.println("posição X: "+ r.position.getX());
+            System.out.println("posição Y: "+ r.position.getY());
         }
         else{
-            System.out.println ("Opcao invalida");
+             System.out.println ("Opcao invalida");
         }
     }
     
