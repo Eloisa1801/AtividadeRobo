@@ -1,4 +1,3 @@
-
 public class Robo {
     Coordenadas position = new Coordenadas(2, 2);
     // char direction;
@@ -39,4 +38,16 @@ public class Robo {
     public void right( int qtdMove){
         position.setX(position.getX()-qtdMove);
     }
+
+    public void posAnderior(){
+        System.out.println("posição X anterior: "+ position.getX());
+        System.out.println("posição Y anterior: "+ position.getY());
+ 
+    }
+
+    public void novaPos (){
+        System.out.println("nova posição X: "+ position.getX());
+        System.out.println("nova posição Y: "+ position.getY());
+    }
+    
 }
